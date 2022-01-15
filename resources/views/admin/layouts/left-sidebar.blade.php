@@ -102,10 +102,10 @@
                     <div class="collapse" id="sidebarCategory">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="#">All Category</a>
+                                <a href="{{route('category.index')}}">All Category</a>
                             </li>
                             <li>
-                                <a href="#">Add Category</a>
+                                <a href="{{route('category.create')}}">Add Category</a>
                             </li>
                         </ul>
                     </div>
@@ -114,16 +114,16 @@
                 <li>
                     <a href="#sidebarSubCategory" data-bs-toggle="collapse" aria-expanded="false" aria-controls="sidebarCategory">
                         <i class="mdi mdi-text-box-multiple-outline"></i>
-                        <span> Sub Category </span>
+                        <span> Post </span>
                         <span class="menu-arrow"></span>
                     </a>
                     <div class="collapse" id="sidebarSubCategory">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="#">All Sub-Category</a>
+                                <a href="#">Posts</a>
                             </li>
                             <li>
-                                <a href="#">Add Sub-Category</a>
+                                <a href="#">Add New Post</a>
                             </li>
                         </ul>
                     </div>

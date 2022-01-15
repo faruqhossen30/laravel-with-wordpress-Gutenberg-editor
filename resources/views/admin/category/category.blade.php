@@ -98,14 +98,14 @@
                                         <td>
                                             <ul class="list-inline table-action m-0">
                                                 <li class="list-inline-item">
-                                                    <a href="{{route('category.show', $category->id)}}" class="action-icon"> <i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" class="action-icon"> <i class="mdi mdi-eye"></i></a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="{{route('category.edit', $category->id)}}" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
+                                                    <a href="#" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
                                                 </li>
                                                 <li class="list-inline-item">
                                                     {{-- <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a> --}}
-                                                    <form action="{{route('category.destroy', $category->id)}}" method="post" >
+                                                    <form action="#" method="post" >
                                                         @csrf
                                                         @method('DELETE')
                                                         <button style="border: none; background:none; color:gray; font-size:17px" type="submit" onclick="confirm('Sure ? Want to delete Tender ?')"><i class="mdi mdi-delete"></i></button>
