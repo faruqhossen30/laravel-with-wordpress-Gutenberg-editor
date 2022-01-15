@@ -20,7 +20,7 @@ class CreatePostsTable extends Migration
             $table->longText('meta_content');
             $table->longText('content');
             $table->string('thumbnail');
-            $table->string('category_id');
+            $table->unsignedBigInteger('category_id');
             $table->timestamps();
         });
     }

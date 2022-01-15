@@ -1,4 +1,4 @@
-@extends('marchant.layouts.app')
+@extends('admin.layouts.app')
 @section('content')
 <div class="content">
     <!-- Start Content-->
@@ -26,7 +26,7 @@
                     <div class="card-body">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <a href="{{route('product.create')}}" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-1"></i> Add Products</a>
+                                <a href="{{route('post.create')}}" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-1"></i> Add Products</a>
                             </div>
                             <div class="col-sm-6">
                                 <div class="float-sm-end">
@@ -39,90 +39,12 @@
                         <!-- end row -->
 
                         <div class="table-responsive">
-                            <table class="table table-centered w-100 dt-responsive nowrap" id="products-datatable" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                <thead class="table-light">
-                                    <tr>
-                                        <th class="all" style="width: 20px;">
-                                            <div class="form-check mb-0 font-16">
-                                                <input class="form-check-input" type="checkbox" id="productlistCheck">
-                                                <label class="form-check-label" for="productlistCheck">&nbsp;</label>
-                                            </div>
-                                        </th>
-                                        <th class="all">S.N</th>
-                                        <th>Image</th>
-                                        <th class="all">Product</th>
-                                        {{-- <th class="all">Photo</th> --}}
-                                        <th>Category</th>
-                                        <th>SubCategory</th>
-                                        <th>Brand</th>
-                                        <th>Price</th>
-                                        <th>Status</th>
-                                        <th style="width: 85px;">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @php
-                                        $serial = 1;
-                                    @endphp
-                                    @foreach ($products as $product)
-                                    <tr>
-                                        <td>
-                                            <div class="form-check mb-0 font-16">
-                                                <input class="form-check-input" type="checkbox" id="productlistCheck1">
-                                                <label class="form-check-label" for="productlistCheck1">&nbsp;</label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <h5 class="m-0 d-inline-block align-middle"><a href="#" class="text-dark">{{$serial++}}</a></h5>
-                                        </td>
-                                        <td>
-                                            <img src="{{$product->img_small}}" alt="contact-img" title="contact-img" class="avatar-sm">
-                                        </td>
-                                        <td>
-                                            <h5 class="m-0 d-inline-block align-middle"><a href="#" class="text-dark">{{$product->title}}</a></h5>
-                                        </td>
-
-                                        <td>
-                                            <span>{{$product->category->name}}</span>
-                                        </td>
-                                        <td>
-                                            <span>{{$product->subCategory->name}}</span>
-                                        </td>
-                                        <td>
-                                            {{$product->brand->name}}
-                                        </td>
-
-                                        <td>
-                                            <div>
-                                                ৳{{$product->price}}
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <span class="badge badge-soft-success">{{$product->status ? 'Active' : 'Deactive'}}</span>
-                                        </td>
-
-                                        <td>
-                                            <ul class="list-inline table-action m-0">
-                                                <li class="list-inline-item">
-                                                    <a href="{{route('product.show', $product->id)}}" class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="{{route('product.edit', $product->id)}}" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <form action="{{route('product.destroy', $product->id)}}" method="post" >
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button style="border: none; background:none; color:gray; font-size:17px" type="submit" onclick="confirm('Are you sure you want to delete this ?')"><i class="mdi mdi-delete"></i></button>
-                                                    </form>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-
-                                </tbody>
-                            </table>
+                            @foreach ($posts as $post)
+                                <div>
+                                    <h5>{{$post->title}}</h5>
+                                    <p>{!! $post->content !!}</p>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
